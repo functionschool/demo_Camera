@@ -13,14 +13,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+       
+        //背景色をセット
+        self.view.backgroundColor = UIColor.white
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "flydata_logo_600_square.png"))
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         let picker = UIImagePickerController()
         picker.sourceType = .camera
         picker.delegate = self
-        
         present(picker, animated: true, completion: nil)
+        
+        // 2秒間背景を表示
+        sleep(3)
+        
     }
     
     override func didReceiveMemoryWarning() {
